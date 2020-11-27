@@ -8,11 +8,11 @@
 body{
     margin: auto auto;
     background-color:var(--fundo);
-    width: 99vw;
+    width: 100vw;
     overflow-x: hidden
 }
 .top-menu-bar{
-    width: 99vw;
+    width: 100vw;
     height: 40%;
     background-color:var(--roxo);
     display: flex;
@@ -26,7 +26,6 @@ body{
     justify-content: left;
     align-items: center;
 }
-
 .top-menu-bar ul li #logo{
     position: relative;
     left: 1;
@@ -40,11 +39,9 @@ body{
     position: relative;
     height: 21vh;
 }
-	
 .top-menu-bar ul{
 	display: flex;
 }
-
 #mother,
 #retract-menu-item{
     display:inline-block;
@@ -55,7 +52,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 .top-menu-bar #container{
     display: flex;
     align-items: center;
@@ -66,7 +62,6 @@ body{
     align-items: center;
     cursor: pointer;
 }
-
 body section.main-slide-button{
     width: 99vw;
     display: inline-flex;
@@ -90,7 +85,6 @@ body section.main-slide-button{
 .GreenButton a:hover{
     background-color:var(--verde);
 }
-
 .top-menu-bar ul.children {
     margin-left: -4.8%;
     display: none;
@@ -99,7 +93,6 @@ body section.main-slide-button{
 #mother:hover .children{
     display: inherit;
     z-index: 99;
-
 }
 .top-menu-bar li#mother li#retract-menu-item {
     background-color: var(--roxo);
@@ -108,11 +101,9 @@ body section.main-slide-button{
 	display:list-item;
     position: relative;
 }
-
 .top-menu-bar li#mother li#retract-menu-item:hover {
     background-color:var(--verde);
 }
-
 #dropdown{
     width: 85vw;
     height: 100%;
@@ -121,69 +112,57 @@ body section.main-slide-button{
     align-items: flex-end;
 }
 
-
-
-
 /*Conteúdo da página Sobre nós*/
 img{
     display: block;
 }
-
 p{
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     font-family:"Corbel";
     font-size: 24px;
-    line-height: 100%;
     text-decoration: none;
 
     color: #202040;
 }
-
 h2{
     font-family:"Corbel";
     font-size: 38px;
-    line-height: 100%;
+    padding-top: 20px;
 
     color: #202040;
 }
 
-
 /*Sections -> bloco*/
-
 .Bloco1{
     position: relative;
     bottom: -16vw;
-    background-color: var(--rosa);
+    /* background-color: rgba(224, 64, 96, 0.80); */
+    background-color: rgba(0, 0, 0, 0.10);
     border-radius: 20px;
     max-width: 92.5%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 30px 30px 1px 30px;
 }
-
 .Bloco2{
     position: relative;
-    bottom: -12vw;
-    background-color: var(--verde);
+    background-color: #44a360;
     border-radius: 20px;
     max-width: 92.5%;
     margin: 5% auto;
     padding: 30px;
 }
-
 .Bloco3{
     position: relative;
-    bottom: -9vw;
     background-color: var(--roxo);
     border-radius: 20px;
     max-width: 92.5%;
-    height: 59vh;
+    height: 44vh;
     margin: 5% auto;
     padding: 15px;
 }
 
-
-/*                                          BLOCO 1                                             */
+/*   BLOCO 1   */
 /*texto com logo*/
 .logotxt{
     display: grid;
@@ -192,7 +171,6 @@ h2{
     margin: 0 auto;
     padding-bottom: 30px;
 }
-
 .logotxt img{
     width: 175%;
     height: auto;
@@ -205,7 +183,6 @@ h2{
     grid-column: 1;
     grid-row: 1/3;
 }   
-
 .logotxt h1{
     background-color: var(--roxo);
     color: #FFF;
@@ -220,37 +197,38 @@ h2{
     grid-row: 2;
 }
 
-
 /*Informações*/
 .articlebox1{
     background-color: var(--verde);
     border-radius: 20px;
-    max-width: 92.5%;
-    margin: 0 auto;
 
     align-items: center;
 }
+.articlebox2{
+    background-color: var(--rosa);
+    border-radius: 20px;
 
+    align-items: center;
+}
 .info{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 3%
+    grid-gap: 5%
 }
 .info #text1{
-    width: 80%;
+    width: 90%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-
 .info #img{
     width: 100%;
     height: 92%;
     border-radius: 10px;
+    padding: 24px;
 }
-
 .info img{
     width: 100%;
     height: 100%;
@@ -262,69 +240,68 @@ h2{
     margin: 0 auto;
     max-width: 70%; 
     text-align: right;
-    padding-bottom: 25vh;
+    padding-bottom: 5vh;
     margin-bottom: 5%;
     margin-top: 5%;
+    text-shadow: 1px 1px 2px #ffffff, 0 0 2px #000000, 0 0 1px #c0c060;
 
     align-items: center;
 }
-
 .val{
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../imagens/Valores.png");
     background-size: cover;
     background-color:white;
-    width: 440px;
-    height: 440px;
+    width: 250px;
+    height: 250px;
     float: right;
-   shape-outside: circle() margin-box; 
-   margin: 5%;
+    shape-outside: circle() margin-box; 
+    margin: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
  
-   border: 10px solid rgba(0, 0, 0, .1);
-   border-left-color: #f38db4;
-   border-radius: 50%;
+    border: 10px solid rgba(0, 0, 0, .1);
+    border-left-color: #f38db4;
+    border-radius: 50%;
 }
 
 /*Nosso diferencial*/
-.articlebox1{
-    background-color: var(--verde);
-    border-radius: 20px;
+.articlebox3{
+    /* border-radius: 20px;
     max-width: 92.5%;
     margin: 0 auto;
     padding: 30px;
 
+    align-items: center; */
+
+    border-radius: 20px;
+
     align-items: center;
 }
-
 .diferencial{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2%
+    grid-gap: 5%;
+    justify-items: center;
 }
 .diferencial #img2{
-    width: 90%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .diferencial img{
     width: 95%;
     height: 95%;
     border-radius: 10px;
 }
 .diferencial #text2{
-    width: 90%;
-    height: 100%;
     text-align: center;
-    padding-left: 15px;
+    padding-left: 30px;
+    padding-top: 80px;
 }
 
-
-
-/*                                            BLOCO 2                                             */
+/*  BLOCO 2  */
 /*Nossa história*/
 .historia{
     display: grid;
@@ -341,7 +318,6 @@ h2{
     align-items: center;
     border-radius: 10px;
 }
-
 .historia img{
     width: 100%;
     height: 90%;
@@ -354,8 +330,7 @@ h2{
     padding-left: 10px;
 }
 
-
-/*                                            BLOCO 3                                             */
+/*BLOCO 3*/
 /*Como contribuir*/
 .cont{
     margin: 0 auto;
@@ -363,15 +338,14 @@ h2{
 
     align-items: center;
 }
-
 .contribuicao{
     background-repeat: no-repeat;
     background-size: 65%;
     background-position: center;
     background-image: url("../imagens/Selo.png");
     background-color: #FFF;
-    width: 30vw;
-    height: 60vh;
+    width: 15vw;
+    height: 30vh;
     border-radius: 50%;
     float: left;
     shape-outside: circle() margin-box; 
@@ -382,11 +356,13 @@ h2{
     border-right-color: var(--verde);
     border-radius: 50%;
 }
-
+#compre-conosco{
+    text-decoration: wavy;
+    color: var(--verde);
+}
 .cont h2{
     color: #FFF;
 }
-
 .cont p{
     color: #FFF;
 }
