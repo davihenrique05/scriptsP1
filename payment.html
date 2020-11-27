@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/payment.css">
         <link rel="stylesheet" href="css/cart.css">
         <link rel="icon" type="image/x-icon" href="imagens/carrinho.png">
+        <script type="text/javascript" src="scripts/validationDados.js"></script>
 
         <title>Pagamento</title>
     </head>
@@ -108,7 +109,7 @@
                             
                         </form>
 
-                        <input id="certo_dados" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificar_dados(this);">
+                        <input id="certo_dados" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificarDados(1);">
 
                     </div>
                 </article>
@@ -129,12 +130,12 @@
                                         <form name="pagamento" id="form_pagamento" action="#">
                                             <article class="pagamento_metade">
                                                 <div>
-                                                    <input type="radio" value="1" name="credito_debito">
+                                                    <input type="radio" id="credito" value="1" name="credito_debito">
                                                     <label>Crédito</label>
                                                 </div>
                                                 
                                                 <div>
-                                                    <input type="radio" value="2" name="credito_debito">
+                                                    <input type="radio" id="debito" value="2" name="credito_debito">
                                                     <label>Débito</label>
                                                 </div>
                                             </article>
@@ -163,13 +164,12 @@
                                             </div>
                                         </form>
                                         
-                                        <input id="certo_pagamento_cartao" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificar_pagamento(this);">
+                                        <input id="certo_pagamento_cartao" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificarPagamento(this, 1);">
                                         
                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                                         <script>
                                             $('input[name="credito_debito"]').on('change', function() {
-                                            $('#parcelas')
-                                                .toggle(+this.value === 1 && this.checked);
+                                                $('#parcelas').toggle(+this.value === 1 && this.checked);
                                             }).change();
                                         </script>
 
@@ -184,7 +184,7 @@
                                 
                                 <div id="accordion_content_pagamento_boleto" class="accordion_content_pagamento">
                                 <button style="height: 40px; width: 350px; font-size: 20px; margin-top: 15px;">Clique aqui para gerar seu boleto</button>
-                                <input id="certo_pagamento_boleto" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificar_pagamento(this);">
+                                <input id="certo_pagamento_boleto" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificarPagamento(1);">
                             </div>
                             
                             </article></div>
@@ -205,7 +205,7 @@
                             <p>Deseja receber emails com as novidades do nosso site?</p>
                             <article class="questionario_metade">
                                 <div>
-                                    <input type="radio" style="margin-left: 25px;" name="sim_nao">
+                                    <input type="radio" checked style="margin-left: 25px;" name="sim_nao">
                                     <label>Sim</label>
                                 </div>
  
@@ -218,12 +218,12 @@
                             <label>Conte como você ficou sabendo do nosso site.</label> <br>
                             <textarea rows = "8" cols = "40" name = "about"></textarea> <br>
 
-                            <input type="checkbox" style="margin-left: 25px;" name="termos">
+                            <input type="checkbox" id="termos" style="margin-left: 25px;" name="termos">
                             <label>Li e aceito os termos de venda da eXotic Fruits</label>
 
                         </form>
                         
-                        <input id="certo_questionario" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificar_dados(this);">
+                        <input id="certo_questionario" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificarQuestionario(1);">
 
                     </div>
 
