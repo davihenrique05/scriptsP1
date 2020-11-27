@@ -12,8 +12,8 @@ document.querySelector("#botao_confirmar").addEventListener("click",()=>{
     const i5 = document.querySelector("#in5").value; //Bairro
     const i6 = document.querySelector("#in6").value; //Cidade
 
-    const i7 = document.querySelector("#in7").value; //Forma de Pagamento
-    const i8 = document.querySelector("#in8").value; //Total
+    //const i7 = document.querySelector("#in7").value; //Forma de Pagamento
+    const i8 = document.querySelector("#precoTotal").value; //Total
 
 
     // Passar variáveis por URL
@@ -23,6 +23,6 @@ document.querySelector("#botao_confirmar").addEventListener("click",()=>{
     + "&in4=" + i4
     + "&in5=" + i5
     + "&in6=" + i6
-    + "&in7=" + i7
+    /*+ "&in7=" + i7*/
     + "&in8=" + i8;
 })
