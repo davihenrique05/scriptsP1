@@ -3,15 +3,22 @@ console.log(listaDeItems)
 
 const itemContainer = document.getElementById('itensContainer');
 const itemPadrao = document.getElementById('lista-item-0');
+const imagemVazio = document.getElementById('imagem-vazio-container')
 
 if(listaDeItems.length==0){
-    console.log("implementar algo para listas vazias")
+    atribuirImagemVazio();
 }else{
+    imagemVazio.style.cssText= 'display:none'
     itemPadrao.style.cssText = 'display:block';
+    itemContainer.style.cssText= 'overflow-y: scroll';
     atribuirInfo();
 }
 
-
+function atribuirImagemVazio(){
+    itemPadrao.style.cssText = 'display:none';
+    imagemVazio.style.cssText= 'display:flex';
+    itemContainer.style.cssText= 'overflow-y: hidden';
+}
 function atribuirInfo(){
     
     for(var i=0; i<listaDeItems.length;i++){
@@ -47,22 +54,40 @@ function alocarDados(lista,indice,imagem,nome,preco){
 
 function adicionarItemAoCarrinho(elt){
 
-    var dados = "add-list-item-" + elt.id
-    dados = dados.split("-")
-
+    var dados = "add-list-item-" + elt.id;
+    dados = dados.split("-");
     var posicaoFruta = parseInt(dados[3]);
-    let fruta = listaDeFrutas[posicaoFruta]
-    console.log(fruta)
-    console.log(listaDeItems)
+    let fruta = listaDeFrutas[posicaoFruta];
+    
+    console.log(fruta);
+    console.log(listaDeItems);  
     if(!listaDeItems.includes(fruta)){
-        listaDeItems.push(fruta);
-        adicionarItensLocal(listaDeFrutas[posicaoFruta].nome)
-        indice = listaDeItems.length-1
-        var item = clonar(indice)
+        imagemVazio.style.cssText= 'display:none';
+        itemContainer.style.cssText= 'overflow-y: scroll';
 
-        mudarChildsLista(item,listaDeItems,indice);
-        calcularPreco(item)
+        if(elt.id==0){
+            console.log("Sua mãe")
+            var item = document.getElementById('lista-item-0');
+            item.style.cssText = 'display:block';
+            listaDeItems.push(fruta);
+            adicionarItensLocal(listaDeFrutas[posicaoFruta].nome);
+            var indice = listaDeItems.length-1;
+            mudarChildsLista(item,listaDeItems,indice);
+            calcularPreco(item);
+        }else{
+            listaDeItems.push(fruta);
+            var indice = listaDeItems.length-1;
+            console.log("Sua mãe")
+            adicionarItensLocal(listaDeFrutas[posicaoFruta].nome);
+            var itemClonado = clonar(indice);
+            mudarChildsLista(itemClonado,listaDeItems,indice);
+            var item = document.getElementById('lista-item-'+indice);
+            item.style.cssText = 'display:block';
+            calcularPreco(itemClonado);
+        }
+        
         $("#itensContainer").scrollTop($("#itensContainer")[0].scrollHeight);
+        
     }else{
         console.log("Mensagem ao usuário que a fruta já está adicionada.")
     }
@@ -88,20 +113,29 @@ function clonar(indice){
 function removerItem(elt){
     let dados = elt.id.split("-");
     let idItem = "lista-item-" + dados[1];
-    
-    document.getElementById(idItem).remove();
+    let item = document.getElementById(idItem)
+    console.log(item)
+    var nome = item.children[0].children[1].children[0].textContent.toLowerCase().replace(/\s/g, '')
 
-    var index= parseInt(dados[1])
+    item.remove();
+
+    var index= parseInt(dados[1])+1
     console.log(index)
-    if(listaDeItems.length != 0){
-        console.log(listaDeItems)
-        var nome = listaDeItems[index].nome
-        listaDeItems.splice(index,1)
-        removerItensLocal(nome)
+
+    for(i=0; i<listaDeItems.length;i++){
+        if(listaDeItems[i].nome.toLowerCase().replace(/\s/g, '') == nome){
+            console.log("Deu certo")
+            listaDeItems.splice(i,1)
+            console.log(listaDeItems)
+            removerItensLocal(nome) 
+        }
     }
+
     console.log(listaDeItems)
     let totals = document.getElementsByClassName('subprecos');
     calcularTotal(totals);
+
+    if(listaDeItems.length==0) atribuirImagemVazio();
 }
 
 function calcularPreco(elt){
@@ -123,6 +157,7 @@ function calcularPreco(elt){
     subtotal.textContent = (precoUnidade * elt.value).toFixed(2);
 
     let totals = document.getElementsByClassName('subprecos');
+    console.log(totals)
     calcularTotal(totals);
 }
 

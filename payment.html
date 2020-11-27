@@ -239,14 +239,14 @@
                                     <label> Adicionar frutas</label>
                                     <img id="openList" src="imagens/toggleButton.svg" onclick="controlarDropdown();" alt="">
                                 </li>
-                                <li id="option2">      
+                                <li id="option2">
                                     <div id="add-lista-item-0" class="dropdown">
                                         <article id="itemAdd">
                                             <img id="itemAddImage" alt=""/>
                                             <div id="itemAddContent">
                                                 <p id="nameAdd"></p>
                                                 <div id="itemAddPrecoContainer">
-                                                    <p>R$</p><p id="precoAdd"></p>
+                                                    <p>R$</p><p id="precoAdd">0</p>
                                                 </div>
                                             </div>
                                             <img id="0" class="itemAddButton" src="imagens/addButton.svg" onclick="adicionarItemAoCarrinho(this);" alt="">
@@ -259,6 +259,9 @@
                     </div>
             
                     <div id = "itensContainer" class="itens">
+                        <div id="imagem-vazio-container">
+                            <img src="imagens/nao_tem_item.png" id="imagem-carrinho-vazio">     
+                        </div>
                         <div id="lista-item-0" class="item">
                             <div id="info">
                                 <div id="imgContainer">
@@ -284,7 +287,7 @@
                             <div id="preco">
                                 <p class="sub-design">Subtotal</p>
                                 <div id="precoContainer">
-                                    <p id="itensMoeda">R$</p> <p class="subprecos" id="Subpreco">450</p>
+                                    <p id="itensMoeda">R$</p> <p class="subprecos" id="Subpreco"></p>
                                 </div>
                             </div>
                             <hr>
