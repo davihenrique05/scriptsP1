@@ -173,6 +173,10 @@ section .box:hover .content {
     background: #E04060;
     color: #FFF;
 }
+.botao:hover{
+    background: #dd778c;
+    border: none;
+}
 .fruit-name {
     width: 240px;
     margin-left: 20px;

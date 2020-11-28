@@ -24,14 +24,13 @@ function adicionarAoCarrinhoShop(elt){
             localStorage.setItem('listaDeItensCart', listaNomes)
             listaQueVem= localStorage.getItem('listaDeItensCart').split(",")
             console.log(listaQueVem);
+            mudaBotao(elt);
         }
         
     }else{
         console.log('Fruta não encontrada')
     }
-
 }
-
 function obterItem(nome){
     for(i=0; i<listaDeFrutas.length;i++){
         if(listaDeFrutas[i].nome.toLowerCase().replace(/\s/g, '') == nome){
@@ -48,4 +47,8 @@ function obterItem(nome){
         console.log(fruta)
     }
     return false
+}
+function mudaBotao(item) {
+    item.textContent = "Adicionado";
+    item.style.cssText= 'background:#c0c060;cursor: default;';
 }
