@@ -40,12 +40,12 @@
                             <article class="dados_metade">
                                 <div>
                                     <label>Nome</label> <br>
-                                    <input type="text" size="60%" name="name">
+                                    <input type="text" size="60%" name="name" id="in1">
                                 </div>
  
                                 <div>
                                     <label>Sobrenome</label> <br>
-                                    <input type="text" size="60%" name="lastname">
+                                    <input type="text" size="60%" name="lastname" id="in1_1">
                                 </div>
                             </article>
                             
@@ -57,7 +57,7 @@
                                 
                                 <div>
                                     <label>RG</label> <br>
-                                    <input type="text" size="60%" name="rg">
+                                    <input type="text" size="60%" name="rg" id="in2">
                                 </div>
                             </article>
 
@@ -76,12 +76,12 @@
                             <article class="dados_triplo">
                                 <div>
                                     <label>Endereço</label> <br>
-                                    <input type="text" size="95%" name="address">
+                                    <input type="text" size="95%" name="address" id="in3">
                                 </div>
                                 
                                 <div>
                                     <label>Estado</label> <br>
-                                    <select name="state" style="width: 80%;">
+                                    <select name="state" style="width: 80%;" id="in4">
                                         <option value=""></option>
                                         <option value="ES">MG</option>
                                         <option value="MG">SP</option>
@@ -91,19 +91,19 @@
 
                                 <div>
                                     <label>Número</label> <br>
-                                    <input type="text" size="10%" name="house_number">
+                                    <input type="text" size="10%" name="house_number" id="in3_1">
                                 </div>
                             </article>
 
                             <article class="dados_metade">
                                 <div>
                                     <label>Bairro</label> <br>
-                                    <input type="text" size="60%" name="bairro">
+                                    <input type="text" size="60%" name="bairro" id="in5">
                                 </div>
                                 
                                 <div>
                                     <label>Cidade</label> <br>
-                                    <input type="text" size="60%" name="city">
+                                    <input type="text" size="60%" name="city" id="in6">
                                 </div>
                             </article>
                             
@@ -312,8 +312,9 @@
             </aside>
         </section>
 
-        <p id="confirmar">
-            <input id="botao_confirmar" type="button" name="verifica" value="Confirmar" onclick="verificar_fim();">
-        </p>
+        <article id="confirmar">
+           <button id="botao_confirmar">Confirmar</button>
+           <script type= "text/javascript"src="scripts/EnviaDados.js"></script>
+        </article>
     </body>
 </html>
