@@ -18,13 +18,13 @@ function atribuirImagemVazio(){
     itemPadrao.style.cssText = 'display:none';
     imagemVazio.style.cssText= 'display:flex';
     itemContainer.style.cssText= 'overflow-y: hidden';
+    let precoTotal = document.getElementById('precoTotal').textContent = " "
 }
 function atribuirInfo(){
     
     for(var i=0; i<listaDeItems.length;i++){
         console.log(i)
         if(i==0){
-            
             mudarChildsLista(itemPadrao,listaDeItems,0);
             calcularPreco(itemPadrao)
         }else{
@@ -117,17 +117,31 @@ function removerItem(elt){
     console.log(item)
     var nome = item.children[0].children[1].children[0].textContent.toLowerCase().replace(/\s/g, '')
 
-    item.remove();
-
-    var index= parseInt(dados[1])+1
-    console.log(index)
-
-    for(i=0; i<listaDeItems.length;i++){
-        if(listaDeItems[i].nome.toLowerCase().replace(/\s/g, '') == nome){
-            console.log("Deu certo")
-            listaDeItems.splice(i,1)
-            console.log(listaDeItems)
-            removerItensLocal(nome) 
+    if(idItem == "lista-item-0"){
+        var itemZero = document.getElementById("lista-item-0")
+        itemZero.style.cssText= 'display:none'
+        for(i=0; i<listaDeItems.length;i++){
+            if(listaDeItems[i].nome.toLowerCase().replace(/\s/g, '') == nome){
+                var preco = itemZero.children[1].children[1].children[1].textContent = null
+                document.getElementById("qtnd-0").value = "1"
+                console.log(preco)
+                console.log("Deu certo")
+                listaDeItems.splice(i,1)
+                console.log(listaDeItems)
+                removerItensLocal(nome) 
+            }
+        }
+    }else{
+        item.remove();
+        var index= parseInt(dados[1])+1
+        console.log(index)
+        for(i=0; i<listaDeItems.length;i++){
+            if(listaDeItems[i].nome.toLowerCase().replace(/\s/g, '') == nome){
+                console.log("Deu certo")
+                listaDeItems.splice(i,1)
+                console.log(listaDeItems)
+                removerItensLocal(nome) 
+            }
         }
     }
 
@@ -140,6 +154,7 @@ function removerItem(elt){
 
 function calcularPreco(elt){
     let dados = elt.id.split("-");
+    console.log(dados)
 
     if(dados.length == 2){
         idItemCalculo = "lista-item-" + dados[1];
@@ -148,7 +163,6 @@ function calcularPreco(elt){
         elt.value = 1;
     }
     
-    
     let item = document.getElementById(idItemCalculo);
     let precoUnidade = item.children[0].children[1].children[1].children[1].textContent;
     precoUnidade = parseFloat(precoUnidade);
@@ -156,19 +170,26 @@ function calcularPreco(elt){
 
     subtotal.textContent = (precoUnidade * elt.value).toFixed(2);
 
-    let totals = document.getElementsByClassName('subprecos');
-    console.log(totals)
-    calcularTotal(totals);
+    let total = document.getElementsByClassName('subprecos');
+    console.log(total)
+    calcularTotal(total);
 }
 
 function calcularTotal(lista){
     let precoTotal = document.getElementById('precoTotal')
     let soma = 0;
-    for(var i=0; i<lista.length;i++){
-       soma += parseFloat(lista[i].textContent)
-    }
+    console.log(lista)
 
+
+    for(var i=0; i<lista.length;i++){
+        if(lista[i].textContent != "" && lista[i].textContent != null ){
+                soma += parseFloat(lista[i].textContent)
+        }
+           
+    }
     precoTotal.textContent = soma.toFixed(2)
+
+   
 }
 
 function receberItems(){

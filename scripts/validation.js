@@ -89,7 +89,6 @@ function verificarPagamento(num) {
                 return false;
             }
         }
-    }
     if (num == 1) {
         alert("Tudo certo!");
     }
