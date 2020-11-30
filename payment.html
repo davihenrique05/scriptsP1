@@ -40,43 +40,43 @@
                             <article class="dados_metade">
                                 <div>
                                     <label>Nome</label> <br>
-                                    <input type="text" size="60%" name="name" id="in1">
+                                    <input type="text" size="42%" name="name" id="in1">
                                 </div>
- 
+
                                 <div>
                                     <label>Sobrenome</label> <br>
-                                    <input type="text" size="60%" name="lastname" id="in1_1">
+                                    <input type="text" size="42%" name="lastname" id="in1_1">
                                 </div>
                             </article>
                             
                             <article class="dados_metade">
                                 <div>
                                     <label>Email</label> <br>
-                                    <input type="text" size="60%" name="email">
+                                    <input type="text" size="42%" name="email">
                                 </div>
                                 
                                 <div>
                                     <label>RG</label> <br>
-                                    <input type="text" size="60%" name="rg" id="in2">
+                                    <input type="number" size="42%" name="rg" id="in2">
                                 </div>
                             </article>
 
                             <article class="dados_metade">
                                 <div>
                                     <label>CPF</label> <br>
-                                    <input type="text" size="60%" name="cpf">
+                                    <input type="number" size="42%" name="cpf">
                                 </div>
                                 
                                 <div>
                                     <label>CEP</label> <br>
-                                    <input type="text" size="60%" name="cep">
+                                    <input type="number" size="42%" name="cep">
                                 </div>
                             </article>
 
                             <article class="dados_triplo">
                                 <div>
                                     <label>Endereço</label> <br>
-                                    <input type="text" size="95%" name="address" id="in3">
+                                    <input type="text" size="65%" name="address" id="in3">
                                 </div>
                                 
                                 <div>
@@ -91,19 +91,19 @@
 
                                 <div>
                                     <label>Número</label> <br>
-                                    <input type="text" size="10%" name="house_number" id="in3_1">
+                                    <input type="number" size="10%" name="house_number" id="in3_1">
                                 </div>
                             </article>
 
                             <article class="dados_metade">
                                 <div>
                                     <label>Bairro</label> <br>
-                                    <input type="text" size="60%" name="bairro" id="in5">
+                                    <input type="text" size="42%" name="bairro" id="in5">
                                 </div>
                                 
                                 <div>
                                     <label>Cidade</label> <br>
-                                    <input type="text" size="60%" name="city" id="in6">
+                                    <input type="text" size="42%" name="city" id="in6">
                                 </div>
                             </article>
                             
@@ -123,7 +123,8 @@
 
                         <div class="accordions_pagamento">
                         
-                            <div class="metadinha"><input type="radio" name="accordion_pagamento" id="cartao" class="accordion_input_pagamento">
+                            <div class="metadinha">
+                                <input type="radio" name="accordion_pagamento" id="cartao" class="accordion_input_pagamento">
                                 <article class="rosa">
                                     <label for="cartao" class="accordion_label_pagamento"><div class="tamanho" style="padding-top: 5px;"><img src="imagens/cartao.png" style="height: 60px; width: 60px; padding: 0px 22px 0px 9px;">Cartão</div></label>
                                     <div class="accordion_content_pagamento">
@@ -180,14 +181,14 @@
                             <div class="metadinha">
                                 <input type="radio" name="accordion_pagamento" id="boleto" class="accordion_input_pagamento">
                                 <article class="rosa">
-                                <label for="boleto" class="accordion_label_pagamento"><div class="tamanho"><img src="imagens/dinheiro.png" style="height: 70px; width: 80px; padding: 0px 10px 0px 0px;">Boleto</div></label>
-                                
-                                <div id="accordion_content_pagamento_boleto" class="accordion_content_pagamento">
-                                <button style="height: 40px; width: 350px; font-size: 20px; margin-top: 15px;">Clique aqui para gerar seu boleto</button>
-                                <input id="certo_pagamento_boleto" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificarPagamento(1);">
-                            </div>
+                                    <label for="boleto" class="accordion_label_pagamento"><div class="tamanho"><img src="imagens/dinheiro.png" style="height: 70px; width: 80px; padding: 0px 10px 0px 0px;">Boleto</div></label>
+                                    <div id="accordion_content_pagamento_boleto" class="accordion_content_pagamento">
+                                        <button style="height: 40px; width: 350px; font-size: 20px; margin-top: 15px;">Clique aqui para gerar seu boleto</button>
+                                        <input id="certo_pagamento_boleto" type="image" src="imagens/certo.png" alt="button" width="50.14px" height="46.57px" name="send" onclick="verificarPagamento(1);">
+                                    </div>
                             
-                            </article></div>
+                                </article>
+                            </div>
 
                         </div>
 

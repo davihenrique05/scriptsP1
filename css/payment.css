@@ -144,9 +144,19 @@ div#botoes-menu{
     grid-template-columns: 1fr 1fr;
 }
 #form_dados
+.dados_metade
+input[type="number"] {
+    width: 465px;
+}
+#form_dados
 .dados_triplo {
     display: grid;
-    grid-template-columns: 73% 12% 21%;
+    grid-template-columns: 73% 10.5% 21%;
+}
+#form_dados
+.dados_triplo
+input[type="number"] {
+    width: 130px;
 }
 #form_dados
 label {
@@ -165,6 +175,7 @@ select {
 
     background: #F5F8FA;
 
+    font-size: 20px;
     border: 1px solid #D3E2E5;
     box-sizing: border-box;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -325,7 +336,7 @@ input[type="checkbox"] {
     color: #FFFFFF;
 
     margin-bottom: 2%;
-    background: #5CCFA9;
+    background: #86c2ae;
     mix-blend-mode: normal;
     border: 0px;
     border-radius: 20px;
