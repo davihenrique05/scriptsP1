@@ -3,17 +3,33 @@
 document.querySelector("#botao_confirmar").addEventListener("click",()=>{
 
     // declaração de cada variável de input
+    var i8 = 0; //Total a pagar
+
     const i1 = document.querySelector("#in1").value + " " + 
     document.querySelector("#in1_1").value; //Nome+Sobrenome
     const i2 = document.querySelector("#in2").value; //RG
     const i3 = document.querySelector("#in3").value + ", Nº" + 
     document.querySelector("#in3_1").value; //Endereço+, nº
-    const i4 = document.querySelector("#in4").value; //Estado
+        const estado_state = document.querySelector("#in4"); //Estado
+        const estado_option = estado_state.children[estado_state.selectedIndex];//Opção selecionada de estado
+        const i4 = estado_option.textContent;//Conteudo de texto de estado
     const i5 = document.querySelector("#in5").value; //Bairro
     const i6 = document.querySelector("#in6").value; //Cidade
+    const i7 = document.querySelector('input[name=accordion_pagamento]:checked').id +
+    " de " + document.querySelector('input[name=credito_debito]:checked').id; //Forma de pagamento
+    
+        //Único caso de haver parcelas é no cartão de crédito
+        if(i7 == "cartao de credito"){
+            var parc = document.querySelector('input[name=parcelas]').value
+            parc = parseFloat(parc);
+            var tot = document.querySelector("#precoTotal").textContent;
+            tot = parseFloat(tot);
 
-    //const i7 = document.querySelector("#in7").value; //Forma de Pagamento
-    const i8 = document.querySelector("#precoTotal").value; //Total
+            i8 = `${parc}x de $${tot/parc}`;
+        }
+        else{
+            i8 = "$"+document.querySelector("#precoTotal").textContent;
+        }
 
 
     // Passar variáveis por URL
@@ -23,6 +39,6 @@ document.querySelector("#botao_confirmar").addEventListener("click",()=>{
     + "&in4=" + i4
     + "&in5=" + i5
     + "&in6=" + i6
-    /*+ "&in7=" + i7*/
+    + "&in7=" + i7
     + "&in8=" + i8;
 })
