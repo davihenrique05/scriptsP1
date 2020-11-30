@@ -15,8 +15,12 @@ document.querySelector("#botao_confirmar").addEventListener("click",()=>{
         const i4 = estado_option.textContent;//Conteudo de texto de estado
     const i5 = document.querySelector("#in5").value; //Bairro
     const i6 = document.querySelector("#in6").value; //Cidade
-    const i7 = document.querySelector('input[name=accordion_pagamento]:checked').id +
-    " de " + document.querySelector('input[name=credito_debito]:checked').id; //Forma de pagamento
+    
+    var i7 = document.querySelector('input[name=accordion_pagamento]:checked').id //Forma de pagamento
+        if(i7 == "cartao"){
+            i7 = document.querySelector('input[name=accordion_pagamento]:checked').id +
+             " de " + document.querySelector('input[name=credito_debito]:checked').id;
+        }    
     
         //Único caso de haver parcelas é no cartão de crédito
         if(i7 == "cartao de credito"){
