@@ -1,6 +1,10 @@
 
-var lista = []
-var listaNomes = []
+var lista = [];
+var listaNomes = [];
+var listaNomes2 = [];
+frutasQueTem();
+
+
 function adicionarAoCarrinhoShop(elt){
     var box = elt.parentElement;
     var nome = box.children[1].textContent.toLowerCase().replace(/\s/g, '');
@@ -31,6 +35,7 @@ function adicionarAoCarrinhoShop(elt){
         console.log('Fruta não encontrada')
     }
 }
+
 function obterItem(nome){
     for(i=0; i<listaDeFrutas.length;i++){
         if(listaDeFrutas[i].nome.toLowerCase().replace(/\s/g, '') == nome){
@@ -48,7 +53,33 @@ function obterItem(nome){
     }
     return false
 }
+
 function mudaBotao(item) {
     item.textContent = "Adicionado";
     item.style.cssText= 'background:#c0c060;cursor: default;';
+}
+
+function frutasQueTem(){
+    listaNomes2 = localStorage.getItem('listaDeItensCart').split(',')
+    var items = document.getElementsByClassName('box')
+
+    for(var i=0; i<items.length; i++){
+        
+        var nomeContainer = items[i].children[1]
+        console.log(nomeContainer.children)
+        if(nomeContainer.children.length == 0){
+            var nome = nomeContainer.textContent.toLowerCase().replace(/\s/g, '')
+            if(listaNomes2.includes(nome)){
+                var botao = items[i].children[3]
+                mudaBotao(botao)
+            }
+            
+        }else{
+            var nome = nomeContainer.children[0].textContent.toLowerCase().replace(/\s/g, '')
+            if(listaNomes2.includes(nome)){
+                var botao = items[i].children[3]
+                mudaBotao(botao)
+            }
+        }
+    }
 }
