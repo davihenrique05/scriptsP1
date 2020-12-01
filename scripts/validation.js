@@ -54,8 +54,10 @@ function verificarDados (num){
     }
     if (num == 1) {
         alert("Tudo certo!");
+        document.getElementById("pagamento").checked = true;
     }
-    document.getElementById("pagamento").checked = true;
+    document.getElementById("dados").disabled = true;
+    document.getElementById("questionario").disabled = true;
     return true
 }
 
@@ -85,8 +87,10 @@ function verificarPagamento(num) {
     }
     if (num == 1) {
         alert("Tudo certo!");
+        document.getElementById("questionario").checked = true;
     }
-    document.getElementById("questionario").checked = true;
+    document.getElementById("quationario").disabled = true;
+    
     return true
 }
 
@@ -97,7 +101,8 @@ function verificarQuestionario(num) {
     }
     if (num == 1) {
         alert("Tudo certo!");
+        document.getElementById("questionario").checked = false;
     }
-    document.getElementById("questionario").checked = false;
+
     return true
 }
