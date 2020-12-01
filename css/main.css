@@ -133,7 +133,7 @@ body section.main-slide-button{
 #slide-show{
     position: relative;
     overflow: hidden;
-    width: 1500px;
+    width: 100%;
     height: 600px;
     margin: 0 auto;
 }
@@ -141,7 +141,17 @@ body section.main-slide-button{
 .banner-box {
     position: relative;
     z-index: -1;
-    width: 4500px;
+    width: 6000px;
+}
+
+.banner-box .banner {
+    width: 100vw;
+    height: 95vh;
+}
+
+.banner-box img {
+    width: 100vw;
+    height: 95vh;
 }
 
 #nav{
@@ -187,8 +197,8 @@ body section.main-slide-button{
 #i3:checked ~ #nav #buttons #button3{background-color: white}
 
 #i1:checked ~ .banner-box{margin-left: -0px;}
-#i2:checked ~ .banner-box{margin-left: -1500px;}
-#i3:checked ~ .banner-box{margin-left: -3000px;}
+#i2:checked ~ .banner-box{margin-left: -100vw;}
+#i3:checked ~ .banner-box{margin-left: -200vw;}
 
 body .content{
     width: 90%;
