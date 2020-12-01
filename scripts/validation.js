@@ -1,10 +1,4 @@
-function cor() {
-    if (verificarDados(2) == true && verificarPagamento(2) == true && verificarQuestionario(2) == true) {
-        document.getElementById("botao_confirmar").style.cssText= 'background:#5CCFA9;';
-    }
-}
-
-function verificarDados(num){
+function verificarDados (num){
     var formularioD = document.getElementById("form_dados");
     // VALIDATING NAME AND LAST NAME
     if (formularioD.name.value == ""){
@@ -62,7 +56,6 @@ function verificarDados(num){
         alert("Tudo certo!");
     }
     document.getElementById("pagamento").checked = true;
-    cor();
     return true
 }
 
@@ -94,7 +87,6 @@ function verificarPagamento(num) {
         alert("Tudo certo!");
     }
     document.getElementById("questionario").checked = true;
-    cor();
     return true
 }
 
@@ -107,6 +99,5 @@ function verificarQuestionario(num) {
         alert("Tudo certo!");
     }
     document.getElementById("questionario").checked = false;
-    cor();
     return true
 }
