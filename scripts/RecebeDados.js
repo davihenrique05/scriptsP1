@@ -51,4 +51,4 @@ switch(writer[6]){
         break;
 }
 
-document.querySelector("#total").innerHTML = "VALOR A SER PAGO<br/> " + writer[7];
+document.querySelector("#total").innerHTML = "VALOR A SER PAGO:<br/> " + writer[7];

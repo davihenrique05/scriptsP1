@@ -85,12 +85,16 @@ div#botoes-menu{
 
 }
 p{
-    font-family: "Corbel";
+    font-family: "Tahoma";
     color: #202040;
 
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 800;
 }
+#total{
+    font-size: 35px;
+}
+
 #data_info{
     text-align: right;
     margin-right: 83px;
@@ -110,28 +114,37 @@ p{
     text-align: right;
     margin-right: 83px;
 }
+.val_pag{
+    padding-top: 10%;
+}
 .end_org{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 10px;
 }
 
 /* >> FINALIZAR << */
-#finalizar {
+
+#botao_finalizar {
     display: flex;
     justify-content: center;
-}
-#botao_finalizar {
+    align-items: center;
+
     width: 817px;
     height: 47.19px;
 
-    font-weight: 800;
-    font-size: 18px;
-    color: #FFFFFF;
-
+    margin: 0 auto;
     margin-bottom: 2.8528%;
+
     background: #5CCFA9;
     mix-blend-mode: normal;
-    border: 0px;
-    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
+
+    font-weight: 800;
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family:"Corbel";
+    text-decoration: none;
+
+    
 }
