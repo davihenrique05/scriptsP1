@@ -80,3 +80,14 @@ function mudarChilds(item,lista,indice){
 
     atribuirDados(lista,imagem,nome,preco,indice)
 }
+
+function sein(elt){
+    elt.addEventListener("keyup",function(event){
+        if(event.keyCode === 13){
+            if(elt.value == 0 || elt.value < 0){
+                elt.value = 1
+                calcularPreco(elt)
+            }
+        }
+    })
+}
