@@ -158,6 +158,13 @@ input[type="number"] {
 input[type="number"] {
     width: 130px;
 }
+#form_dados input[type=number]::-webkit-inner-spin-button,
+    #form_dados input[type=number]::-webkit-outer-spin-button, 
+    input[name="n_cartao"]::-webkit-inner-spin-button,
+    input[name="n_cartao"]::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
 #form_dados
 label {
     font-family: "Corbel";
@@ -341,8 +348,3 @@ input[type="checkbox"] {
     border: 0px;
     border-radius: 20px;
 }
-input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }

@@ -15,7 +15,7 @@ body{
     padding: 0;
 }
 html{
-    scroll-behavior: smooth;
+    overflow-y: hidden;
 }
 
 /* >>> MENU <<< */
@@ -76,13 +76,12 @@ div#botoes-menu{
 }
 .bloco {
     width: 75%;
-    padding: 5.2% 0 5.2% 0;
+    padding: 2.7% 0 2.7% 0;
     justify-self: center;
 
     background: linear-gradient(252.13deg, rgba(192, 192, 96, 0.85) 21.41%, rgba(224, 64, 96, 0.8) 76.95%);
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
-
 }
 p{
     font-family: "Tahoma";
@@ -133,7 +132,7 @@ p{
     width: 817px;
     height: 47.19px;
 
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-bottom: 2.8528%;
 
     background: #5CCFA9;
@@ -144,7 +143,10 @@ p{
     font-size: 25px;
     color: #FFFFFF;
     font-family:"Corbel";
-    text-decoration: none;
-
-    
+    text-decoration: none;   
+}
+#finalizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

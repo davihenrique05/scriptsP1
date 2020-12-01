@@ -79,7 +79,6 @@ function verificarDados (num){
     }
     if (num == 1) {
         verifica();
-        alert("Tudo certo!");
         document.getElementById("pagamento").checked = true;
     }
     return true
@@ -118,10 +117,15 @@ function verificarPagamento(num) {
             }
             return false;
         }
+        if (formularioP.parcelas.value <1 || formularioP.parcelas.value >12){
+            if (num == 1) {
+                alert("Insira um número válido de parcelas.");
+            }
+            return false;
+        }
     }
     if (num == 1) {
         verifica();
-        alert("Tudo certo!");
         document.getElementById("questionario").checked = true;
     }
     return true
@@ -136,7 +140,6 @@ function verificarQuestionario(num) {
     }
     if (num == 1) {
         verifica();
-        alert("Tudo certo!");
         document.getElementById("questionario").checked = false;
     }
     return true

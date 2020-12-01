@@ -25,7 +25,7 @@ document.querySelector("#botao_confirmar").addEventListener("click",()=>{
         //Único caso de haver parcelas é no cartão de crédito
         if(i7 == "cartao de credito"){
             var parc = document.querySelector('input[name=parcelas]').value
-            parc = parseFloat(parc);
+            parc = parseInt(parc);
             var tot = document.querySelector("#precoTotal").textContent;
             tot = parseFloat(tot);
 
