@@ -28,19 +28,19 @@ function verificarDados (num){
             return false;
     }
     // VALIDATING RG / CPF / CEP
-    if (formularioD.rg.value == "" || formularioP.rg.value.toString().length <9 || formularioP.rg.value < 0 || formularioP.rg.value.toString().length >10){
+    if (formularioD.rg.value == "" || formularioD.rg.value.toString().length <9 || formularioD.rg.value < 0 || formularioD.rg.value.toString().length >10){
         if (num == 1) {
             alert("Insira um RG válido.");
         }
             return false;
     }
-    if (formularioD.cpf.value == "" || formularioP.cpf.value.toString().length != 11 || formularioP.cpf.value < 0){
+    if (formularioD.cpf.value == "" || formularioD.cpf.value.toString().length != 11 || formularioD.cpf.value < 0){
         if (num == 1) {
             alert("Insira um CPF válido.");
         }
             return false;
     }
-    if (formularioD.cep.value == "" || formularioP.cep.value.toString().length != 8 || formularioP.cep.value < 0 ){
+    if (formularioD.cep.value == "" || formularioD.cep.value.toString().length != 8 || formularioD.cep.value < 0 ){
         if (num == 1) {
             alert("Insira um CEP válido.");
         }
@@ -59,7 +59,7 @@ function verificarDados (num){
         }
         return false;
     }
-    if (formularioD.house_number.value == "" || formularioP.house_number.value < 0 ){
+    if (formularioD.house_number.value == "" || formularioD.house_number.value < 0 ){
         if (num == 1) {
             alert("Insira um número válido.");
         }
@@ -149,8 +149,10 @@ function verifica() {
     if (verificarDados(2) == true && verificarPagamento(2) == true && verificarQuestionario(2) == true && isNaN(parseFloat(document.querySelector("#precoTotal").textContent)) == false) {
         document.getElementById("botao_confirmar").disabled = false;
         document.getElementById("botao_confirmar").style.background = "#5CCFA9";
+        document.getElementById("botao_confirmar").style.cursor = "pointer";
     } else {
         document.getElementById("botao_confirmar").disabled = true;
         document.getElementById("botao_confirmar").style.background = "#9FCFBF";
+        alert("Seu carrinho está vazio.")
     }
 }
