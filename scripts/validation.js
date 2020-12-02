@@ -78,7 +78,6 @@ function verificarDados (num){
         return false;
     }
     if (num == 1) {
-        verifica();
         document.getElementById("pagamento").checked = true;
     }
     return true
@@ -125,7 +124,6 @@ function verificarPagamento(num) {
         }
     }
     if (num == 1) {
-        verifica();
         document.getElementById("questionario").checked = true;
     }
     return true

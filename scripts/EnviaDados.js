@@ -29,10 +29,10 @@ document.querySelector("#botao_confirmar").addEventListener("click",()=>{
             var tot = document.querySelector("#precoTotal").textContent;
             tot = parseFloat(tot);
 
-            i8 = `${parc}x de $${(tot/parc).toFixed(2)}`;
+            i8 = `${parc}x de R$${(tot/parc).toFixed(2)}`;
         }
         else{
-            i8 = "$"+document.querySelector("#precoTotal").textContent;
+            i8 = "R$"+document.querySelector("#precoTotal").textContent;
         }
 
 
