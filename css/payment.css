@@ -282,7 +282,10 @@ input[type="radio"] {
 #certo_pagamento_boleto {
     margin-left: 450px;
 }
-
+#boleto_msg{
+    font-family: "Corbel";
+    font-size: 18px;
+}
 /* > QUESTIONARIO < */
 #form_questionario
 .questionario_metade {

@@ -4,20 +4,20 @@ function verificarDados (num){
     if (formularioD.name.value == ""){
         if (num == 1) {
 
-            alert("Insira seu Nome no campo designado.");
+            alert("Insira um nome no campo designado.");
         }
         return false;
     }
     if(formularioD.lastname.value == ""){
         if (num == 1) {
-            alert("Insira seu Sobrenome no campo designado.");
+            alert("Insira um sobrenome válido.");
         }
             return false;
     }
     // VALIDATING EMAIL 
     if (formularioD.email.value == ""){
         if (num == 1) {
-            alert("Insira seu Email no campo designado.");
+            alert("Insira um E-mail válido.");
         }
             return false;
     }
@@ -28,28 +28,28 @@ function verificarDados (num){
             return false;
     }
     // VALIDATING RG / CPF / CEP
-    if (formularioD.rg.value == ""){
+    if (formularioD.rg.value == "" || formularioP.rg.value.toString().length <9 || formularioP.rg.value < 0 || formularioP.rg.value.toString().length >10){
         if (num == 1) {
-            alert("Insira seu RG no campo designado.");
+            alert("Insira um RG válido.");
         }
             return false;
     }
-    if (formularioD.cpf.value == ""){
+    if (formularioD.cpf.value == "" || formularioP.cpf.value.toString().length != 11 || formularioP.cpf.value < 0){
         if (num == 1) {
-            alert("Insira seu CPF no campo designado.");
+            alert("Insira um CPF válido.");
         }
             return false;
     }
-    if (formularioD.cep.value == ""){
+    if (formularioD.cep.value == "" || formularioP.cep.value.toString().length != 8 || formularioP.cep.value < 0 ){
         if (num == 1) {
-            alert("Insira seu CEP no campo designado.");
+            alert("Insira um CEP válido.");
         }
             return false;
     }
     // VALIDATING ADDRESS
     if (formularioD.address.value == ""){
         if (num == 1) {
-            alert("Insira seu Endereço no campo designado.");
+            alert("Insira um Endereço válido.");
         }
         return false;
     }
@@ -59,9 +59,9 @@ function verificarDados (num){
         }
         return false;
     }
-    if (formularioD.house_number.value == ""){
+    if (formularioD.house_number.value == "" || formularioP.house_number.value < 0 ){
         if (num == 1) {
-            alert("Insira o número da sua casa.");
+            alert("Insira um número válido.");
         }
         return false;
     }
@@ -99,9 +99,9 @@ function verificarPagamento(num) {
             }
             return false;
         }
-        if(formularioP.n_cartao.value == "") {
+        if(formularioP.n_cartao.value == "" || formularioP.n_cartao.value.toString().length != 16 || formularioP.n_cartao.value < 0) {
             if (num == 1) {
-                alert("Insira o Número do Cartão no campo designado.");
+                alert("Insira um Número de Cartão válido.");
             }
             return false;
         }
@@ -111,9 +111,9 @@ function verificarPagamento(num) {
             }
             return false;
         }
-        if (formularioP.cvv.value == "") {
+        if (formularioP.cvv.value == "" || formularioP.cvv.value.toString().length != 3 || formularioP.cvv.value < 0) {
             if (num == 1) {
-                alert("Insira o Número do CVV no campo designado.");
+                alert("Insira um CVV válido.");
             }
             return false;
         }
