@@ -91,3 +91,12 @@ function sein(elt){
         }
     })
 }
+
+function verificaOnChange(elt){
+    if(elt.value== 0 || elt.value<0){
+        elt.value = 1
+        return true
+    }else{
+        return true
+    }
+}

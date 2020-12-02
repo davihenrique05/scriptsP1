@@ -162,7 +162,9 @@ function calcularPreco(elt){
         idItemCalculo = "lista-item-" + dados[2];
         elt.value = 1;
     }
-    
+
+    verificaOnChange(elt)
+
     let item = document.getElementById(idItemCalculo);
     let precoUnidade = item.children[0].children[1].children[1].children[1].textContent;
     precoUnidade = parseFloat(precoUnidade);
