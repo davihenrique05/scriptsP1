@@ -72,7 +72,7 @@ body{
 }
 
 body section.main-slide-button{
-    width: 99vw;
+    width: 100vw;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +127,7 @@ body section.main-slide-button{
 .banner{
     float: left;
     height: 600px;
-    width: 1500px;
+    width: 100vw;
 }
   
 #slide-show{
