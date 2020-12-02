@@ -8,7 +8,6 @@ var verificar = false;
 function controlarDropdown(){
     let dropdown = dropdownLista[0].style;
     let linha = linhaLista.style;
-    console.log(status)
     if(linha.display == '' || linha.display == 'none'){
         
         if(!verificar){
@@ -24,7 +23,6 @@ function controlarDropdown(){
 }
 
 function aparecerLista(){
-    console.log(dropdownLista)
     dropdownLista[0].style.cssText= 'display:flex;';
     linhaLista.style.cssText= 'display:block;';
     listaPadrao.style.cssText = 'overflow-y:scroll';
